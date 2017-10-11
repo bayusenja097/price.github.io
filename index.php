@@ -14,32 +14,6 @@
 <form action="<?$_SERVER['PHP_SELF']?>" method="POST" name="pencarian" id="pencarian"></center>
 	<center><input align="center" type="text" name="search" id="search" placeholder=" insert part number" size="30" width="">
 	<p><center><input type="submit" name="submit" id="submit" value="CEK HARGA"></p><br/>
-<?php
-$Open = mysql_connect("localhost:3306","id3213121_adminbgtdkhj","yvfHCjNEbC__");
-	if (!$Open){
-	die ("Koneksi ke Database Gagal !<br>");
-		}
-$Koneksi = mysql_select_db("id3213121_parts");
-	if (!$Koneksi){
-	die ("Koneksi ke Database Gagal !");
-	}
-//menampilkan data
-if ((isset($_POST['submit'])) AND ($_POST['search'] <> "")) {
-  $search = $_POST['search'];
-  $sql = mysql_query("SELECT * FROM price WHERE num LIKE '%$search%'") or die(mysql_error());
-	//menampilkan jumlah hasil pencarian
-  $jumlah = mysql_num_rows($sql); 
-  if ($jumlah > 0) {
-    echo '';
-	$nomer=0;
-    while (	$hasil = mysql_fetch_array ($sql)) {
-		$nomer++;
-		$num = stripslashes ($hasil['num']);
-		$name = stripslashes ($hasil['name']);
-		$motor = stripslashes ($hasil['motor']);
-		$harga = stripslashes ($hasil['harga']);
-		}
-?>
 <center><table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
 <tr><td>&nbsp;Part Number</td><td>&nbsp;<?=$num?></td></tr>
 <tr><td>&nbsp;Part Name</td><td>&nbsp;<?=$name?></td></tr>
