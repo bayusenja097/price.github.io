@@ -1,9 +1,4 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Pricelist</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
 <body>
 <div id="container">
 <div id="header">
@@ -18,8 +13,7 @@
 <div id="content">
 <form action="<?$_SERVER['PHP_SELF']?>" method="POST" name="pencarian" id="pencarian"></center>
 	<center><input align="center" type="text" name="search" id="search" placeholder=" insert part number" size="30" width="">
-	<p><center><input type="submit" name="submit" id="submit" value="CEK HARGA"></center></p>
-</form><br/>
+	<p><center><input type="submit" name="submit" id="submit" value="CEK HARGA"></p><br/>
 <?php
 $Open = mysql_connect("localhost:3306","id3213121_adminbgtdkhj","yvfHCjNEbC__");
 	if (!$Open){
